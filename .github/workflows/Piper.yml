@@ -7,45 +7,35 @@ on:
 jobs:
  
 deploy-dev:
- 
-    runs-on: ubuntu-latest
+   runs-on: ubuntu-latest
     enviroment:
-    name: dev
-    url: 'julioarruda.com'
-    
+      name: dev
+      url: 'julioarruda.com'
     needs: build
     steps:
-
-
-      - name: Run a one-line script
-        
-        run: echo Deploy Dev
+     - name: Run a one-line script
+       run: echo Deploy Dev
         
         
-        
-
 deploy-hmg:
  runs-on: ubuntu-latest
  enviroment:
- name: hmg
- url: 'testepipe.com'
+   name: hmg
+   url: 'testepipe.com'
 needs: deploy-dev
 steps:
- - name: Run a one-line script
-   run: echo Deploy HMG
+  - name: Run a one-line script
+    run: echo Deploy HMG
    
    
-     deploy-prd:
- 
+   
+  deploy-prd:
     runs-on: ubuntu-latest
     enviroment:
-    name: prd
-    url: 'testepipe.com'
-    
+      name: prd
+      url: 'testepipe.com' 
     needs: deploy-prd
     steps:
-
-      
       - name: Run a one-line script
         run: echo Deploy PRD
      
