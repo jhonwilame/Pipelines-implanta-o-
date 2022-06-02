@@ -1,16 +1,19 @@
-name: DmonewCD
-
-
+name: Dmonewpiper
 on:
    workflow_dispatch:  
 
 jobs:
- 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Run a one-line script
+       run: echo Deploy Dev
+
 deploy-dev:
-   runs-on: ubuntu-latest
-    enviroment:
-      name: dev
-      url: 'julioarruda.com'
+  runs-on: ubuntu-latest
+  enviroment:
+    name: dev
+    url: 'julioarruda.com'
     needs: build
     steps:
      - name: Run a one-line script
@@ -26,15 +29,13 @@ needs: deploy-dev
 steps:
   - name: Run a one-line script
     run: echo Deploy HMG
-   
-   
-   
-  deploy-prd:
+ 
+ deploy-prd:
     runs-on: ubuntu-latest
     enviroment:
       name: prd
       url: 'testepipe.com' 
-    needs: deploy-prd
+    needs: deploy-hmg
     steps:
       - name: Run a one-line script
         run: echo Deploy PRD
