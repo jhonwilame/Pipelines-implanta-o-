@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: prd
-      url: 'julioarruda.com'
+      url: 'juli.com'
     needs: deploy-hmg
     steps:
       - name: Run a one-line script
