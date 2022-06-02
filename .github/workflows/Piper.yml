@@ -1,5 +1,3 @@
-
-
 name: DmonewCD
 
 
@@ -8,22 +6,12 @@ on:
 
 jobs:
  
-  build:
- 
-    runs-on: ubuntu-latest
-    steps:
-
-      
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-
 deploy-dev:
  
     runs-on: ubuntu-latest
     enviroment:
     name: dev
-    url: 'testepipe.com'
+    url: 'julioarruda.com'
     
     needs: build
     steps:
@@ -35,21 +23,16 @@ deploy-dev:
         
         
         
-        deploy-hmg:
- 
-   
-   runs-on: ubuntu-latest
-   
-    enviroment:
-    name: hmg
-    url: 'testepipe.com'
-    
-    needs: deploy-dev
-    steps:
 
-      
-      - name: Run a one-line script
-        run: echo Deploy HMG
+deploy-hmg:
+ runs-on: ubuntu-latest
+ enviroment:
+ name: hmg
+ url: 'testepipe.com'
+needs: deploy-dev
+steps:
+ - name: Run a one-line script
+   run: echo Deploy HMG
    
    
      deploy-prd:
