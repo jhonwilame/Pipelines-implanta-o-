@@ -1,11 +1,10 @@
 
 
-name:DmonewCD
+name: DmonewCD
 
 
 on:
-
-
+   workflow_dispatch:  
 
 jobs:
  
@@ -30,7 +29,7 @@ deploy-dev:
     steps:
 
 
-- name: Run a one-line script
+      - name: Run a one-line script
         
         run: echo Deploy Dev
         
@@ -38,7 +37,9 @@ deploy-dev:
         
         deploy-hmg:
  
-    runs-on: ubuntu-latest
+   
+   runs-on: ubuntu-latest
+   
     enviroment:
     name: hmg
     url: 'testepipe.com'
